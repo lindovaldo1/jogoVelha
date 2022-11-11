@@ -23,7 +23,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jogador Solo"
+        android:text=" Jogador Solo  "
         android:textAllCaps="false"
         android:id="@+id/idBtnSinglePlayer"
         android:layout_below="@id/idTVHead"
