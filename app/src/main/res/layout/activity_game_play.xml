@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GamePlayActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="38dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:weightSum="2">
+        
+        <TextView
+            android:id="@+id/idTVPlayer1"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jogador 1"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+
+            />
+
+        <TextView
+            android:id="@+id/idTVPlayer2"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jogador 2"
+            android:textAlignment="center"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginStart="18dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp">
+
+        <Button
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:id="@+id/idBtnBox1"
+            android:onClick="buttonClick"
+            />
+
+        <Button
+            android:layout_width="188dp"
+            android:layout_height="188dp"
+            android:layout_margin="8dp"
+            android:id="@+id/idBtnBox2"
+            android:onClick="buttonClick"
+            />
+
+        <Button
+            android:layout_width="188dp"
+            android:layout_height="188dp"
+            android:layout_margin="8dp"
+            android:id="@+id/idBtnBox3"
+            android:onClick="buttonClick"
+            />
+
+    </LinearLayout>
+    
+</LinearLayout>
