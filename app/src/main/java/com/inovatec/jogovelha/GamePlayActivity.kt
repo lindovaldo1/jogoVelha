@@ -90,7 +90,7 @@ class GamePlayActivity : AppCompatActivity() {
             buttonSelected.text = ""
 
             player1TV.text = "Jogador 1 : $player1count"
-            player2TV.text = "Jogador 1 : $player2count"
+            player2TV.text = "Jogador 2 : $player2count"
         }
     }
 
@@ -138,7 +138,7 @@ class GamePlayActivity : AppCompatActivity() {
             }else if (singleUser){
                 Handler().postDelayed(Runnable { robot() }, 2000)
             }else{
-                activeUser = 1
+                activeUser = 0
             }
 
         }else{
