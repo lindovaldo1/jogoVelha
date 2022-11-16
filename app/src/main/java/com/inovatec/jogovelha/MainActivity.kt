@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         multiPlayerBtn.setOnClickListener{
             singleUser = false
-            startActivity(Intent(this, GamePlayActivity::class.java))
+            startActivity(Intent(this, MultiPlayerGameSelectionActivity::class.java))
         }
     }
 }

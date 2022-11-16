@@ -144,7 +144,7 @@ class GamePlayActivity : AppCompatActivity() {
         }else{
             buttonSelected.text = "0"
 //            audio.start()
-            buttonSelected.setTextColor(Color.parseColor("#FFBB86FC"))
+            buttonSelected.setTextColor(Color.parseColor("#FFBB86"))
 
             activeUser = 1
             player2.add(currCell)

@@ -13,6 +13,27 @@
         android:theme="@style/Theme.JogoVelha"
         tools:targetApi="31">
         <activity
+            android:name=".OnlineMultiPlayerGameActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".OnlineCodeGeneratorActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MultiPlayerGameSelectionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".GamePlayActivity"
             android:exported="false">
             <meta-data
