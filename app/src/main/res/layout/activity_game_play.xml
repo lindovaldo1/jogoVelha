@@ -137,12 +137,12 @@
 
         <Button
             android:id="@+id/idBtnBox7"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="108dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:textSize="25dp"
-            android:onClick="buttonClick"/>
+            android:layout_weight="1"
+            android:onClick="buttonClick"
+            android:textSize="25dp" />
 
         <Button
             android:id="@+id/idBtnBox8"

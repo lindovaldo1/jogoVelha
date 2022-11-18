@@ -104,7 +104,7 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
     }
 
     fun moveOnline(data: String, move:Boolean){
-//        val audio = MediaPlayer.create(this, R.raw.app_src_main_res_raw_poutch)
+
         if(move){
             var buttonSelected: Button?
             buttonSelected = when(data.toInt()){
@@ -124,8 +124,7 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
             buttonSelected.setTextColor(Color.parseColor("#D22BB804"))
             player2.add(data.toInt())
             emptyCells.add(data.toInt())
-//            audio.start()
-//            Handler().postDelayed(Runnable { audio.release() }, 200)
+
             buttonSelected.isEnabled = false
             checkWinner()
 
@@ -134,7 +133,6 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
 
     private fun checkWinner(): Any{
 
-//        val audio = MediaPlayer.create(this, R.raw.app_src_main_res_raw_success)
         if ( (player1.contains(1)  && player1.contains(2) && player1.contains(3)) ||
             (player1.contains(1)  && player1.contains(4) && player1.contains(7)) ||
             (player1.contains(3)  && player1.contains(6) && player1.contains(9)) ||
@@ -146,24 +144,21 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
         ){
             player1count += 1
             buttonDisable()
-//            audio.start()
+
             disableReset()
-//            Handler().postDelayed(Runnable { audio.release() }, 4000)
 
             val build = AlertDialog.Builder(this)
             build.setTitle("FIM DE JOGO")
             build.setMessage("Jogador 1 GANHOU \n\n"+"Vamos jogar novamente")
             build.setPositiveButton("Ok"){ dialog, which->
                 reset()
-//                audio.release()
             }
 
             build.setNegativeButton("Sair"){dialog, which->
-//                audio.release()
                 removeCode()
                 exitProcess(1)
             }
-            Handler().postDelayed(Runnable { build.show() }, 2000)
+            Handler().postDelayed(Runnable { build.show() }, 200)
 
             return 1
 
@@ -178,25 +173,21 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
         ){
 
             player2count += 1
-//            audio.start()
             buttonDisable()
             disableReset()
-            //            Handler().postDelayed(Runnable { audio.release() }, 4000)
 
             val build = AlertDialog.Builder(this)
             build.setTitle("FIM DE JOGO")
             build.setMessage("Jogador 2 GANHOU \n\n"+"Vamos jogar novamente")
             build.setPositiveButton("Ok"){ dialog, which->
                 reset()
-//                audio.release()
             }
 
             build.setNegativeButton("Sair"){dialog, which->
-//                audio.release()
                 removeCode()
                 exitProcess(1)
             }
-            Handler().postDelayed(Runnable { build.show() }, 2000)
+            Handler().postDelayed(Runnable { build.show() }, 200)
 
             return 1
 
@@ -223,7 +214,6 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
     }
 
     private fun playerNow(buttonSelected: Button, currCell: Int){
-//        val audio = MediaPlayer.create(ths, R.raw.app_src_main_res_raw_poutch)
         buttonSelected.text = "X"
         emptyCells.remove(currCell)
         turnTV.text = "Turno : Jogador 2"
@@ -232,9 +222,7 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
 
         player1.add(currCell)
         emptyCells.add(currCell)
-//        audio.start()
         buttonSelected.isEnabled = true
-//        Handler().postDelayed(Runnable { audio.release() }, 200)
         checkWinner()
     }
 
@@ -303,7 +291,7 @@ class OnlineMultiPlayerGameActivity : AppCompatActivity() {
 
     fun disableReset(){
         resetBtn.isEnabled = false
-        Handler().postDelayed(Runnable { resetBtn.isEnabled = true }, 2000)
+        Handler().postDelayed(Runnable { resetBtn.isEnabled = true }, 200)
     }
 
     fun updateDataBase(cellId: Int){

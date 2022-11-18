@@ -69,7 +69,7 @@ class OnlineCodeGeneratorActivity : AppCompatActivity() {
                                     Toast.makeText(this@OnlineCodeGeneratorActivity, "Por favor, Não volte", Toast.LENGTH_SHORT).show()
                                 }, 300)
                             }
-                        }, 2000)
+                        }, 200)
                     }
 
                     override fun onCancelled(error: DatabaseError) {
@@ -121,7 +121,7 @@ class OnlineCodeGeneratorActivity : AppCompatActivity() {
                                 loadingPB.visibility = View.VISIBLE
                                 Toast.makeText(this@OnlineCodeGeneratorActivity, "Código invalido", Toast.LENGTH_SHORT).show()
                             }
-                        }, 2000)
+                        }, 200)
                     }
 
                     override fun onCancelled(error: DatabaseError) {

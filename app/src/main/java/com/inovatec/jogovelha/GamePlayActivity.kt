@@ -112,13 +112,12 @@ class GamePlayActivity : AppCompatActivity() {
             }
 
             playerTurn = false
-            Handler().postDelayed( Runnable { playerTurn = true }, 600)
+            Handler().postDelayed( Runnable { playerTurn = true }, 60)
             playerNow(but, cellID)
         }
     }
 
     private fun playerNow(buttonSelected: Button, currCell: Int){
-//        val audio = MediaPlayer.create(ths, R.raw.app_src_main_res_raw_poutch)
 
         if(activeUser == 1){
 
@@ -128,33 +127,30 @@ class GamePlayActivity : AppCompatActivity() {
             player1.add(currCell)
             emptyCells.add(currCell)
 
-//            audio.start()
             buttonSelected.isEnabled = false
-//            Handler().postDelayed(Runnable { audio.release() }, 200)
 
             val checkWinner = checkWinner()
             if(checkWinner == 1){
-                Handler().postDelayed(Runnable { reset() }, 2000)
+                Handler().postDelayed(Runnable { reset() }, 200)
             }else if (singleUser){
-                Handler().postDelayed(Runnable { robot() }, 2000)
+                Handler().postDelayed(Runnable { robot() }, 200)
             }else{
                 activeUser = 0
             }
 
         }else{
             buttonSelected.text = "0"
-//            audio.start()
             buttonSelected.setTextColor(Color.parseColor("#FFBB86"))
 
             activeUser = 1
             player2.add(currCell)
             emptyCells.add(currCell)
-//            Handler().postDelayed(Runnable { audio.release() }, 200)
+
             buttonSelected.isEnabled = false
 
             val checkWinner = checkWinner()
             if(checkWinner == 1){
-                Handler().postDelayed(Runnable { reset() }, 4000)
+                Handler().postDelayed(Runnable { reset() }, 400)
             }
 
         }
@@ -180,9 +176,7 @@ class GamePlayActivity : AppCompatActivity() {
                 }
             }
             emptyCells.add(rnd)
-//            val audio = MediaPlayer.create(this, R.raw.app_src_main_res_raw_poutch)
-//            audio.start()
-//            Handler().postDelayed(Runnable { audio.release() }, 500)
+
             buttonSelected.text = "o"
             buttonSelected.setTextColor(Color.parseColor("#FF3700B3"))
             player2.add(rnd)
@@ -190,14 +184,13 @@ class GamePlayActivity : AppCompatActivity() {
 
             var checkWinner = checkWinner()
             if(checkWinner == 1){
-                Handler().postDelayed(Runnable { reset() }, 2000)
+                Handler().postDelayed(Runnable { reset() }, 200)
             }
         }
     }
 
     private fun checkWinner(): Any{
 
-//        val audio = MediaPlayer.create(this, R.raw.app_src_main_res_raw_success)
         if ( (player1.contains(1)  && player1.contains(2) && player1.contains(3)) ||
              (player1.contains(1)  && player1.contains(4) && player1.contains(7)) ||
              (player1.contains(3)  && player1.contains(6) && player1.contains(9)) ||
@@ -209,23 +202,19 @@ class GamePlayActivity : AppCompatActivity() {
         ){
             player1count += 1
             buttonDisable()
-//            audio.start()
             disableReset()
-//            Handler().postDelayed(Runnable { audio.release() }, 4000)
 
             val build = AlertDialog.Builder(this)
             build.setTitle("FIM DE JOGO")
             build.setMessage("Jogador 1 GANHOU \n\n"+"Vamos jogar novamente")
             build.setPositiveButton("Ok"){ dialog, which->
                 reset()
-//                audio.release()
             }
 
             build.setNegativeButton("Sair"){dialog, which->
-//                audio.release()
                 exitProcess(1)
             }
-            Handler().postDelayed(Runnable { build.show() }, 2000)
+            Handler().postDelayed(Runnable { build.show() }, 200)
 
             return 1
 
@@ -240,24 +229,21 @@ class GamePlayActivity : AppCompatActivity() {
         ){
 
             player2count += 1
-//            audio.start()
+
             buttonDisable()
             disableReset()
-            //            Handler().postDelayed(Runnable { audio.release() }, 4000)
 
             val build = AlertDialog.Builder(this)
             build.setTitle("FIM DE JOGO")
             build.setMessage("Jogador 2 GANHOU \n\n"+"Vamos jogar novamente")
             build.setPositiveButton("Ok"){ dialog, which->
                 reset()
-//                audio.release()
             }
 
             build.setNegativeButton("Sair"){dialog, which->
-//                audio.release()
                 exitProcess(1)
             }
-            Handler().postDelayed(Runnable { build.show() }, 2000)
+            Handler().postDelayed(Runnable { build.show() }, 200)
 
             return 1
 
